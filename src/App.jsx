@@ -12,11 +12,13 @@ function App() {
     duration: 10,
   });
 
+  const validInput = userInput.duration >= 1;
+
   function handleChange(investmentType, newValue) {
     setUserInput((item) => {
       return {
         ...item,
-        [investmentType]: newValue,
+        [investmentType]: +newValue,
       };
     });
   }
@@ -29,7 +31,8 @@ function App() {
           <UserInput onChange={handleChange} userInput={userInput} />
         </div>
         <div className="col">
-          <Results input={userInput} />
+          {!validInput && <p className="centered-text">The entered value is not a valid number</p>}
+          {validInput && <Results input={userInput} />}
         </div>
       </div>
     </div>
