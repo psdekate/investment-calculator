@@ -1,9 +1,11 @@
-import logo from "../assets/money-tag.svg";
+import logo2 from "../assets/money-tag-2.svg";
 
 export function Header() {
   return (
     <div className="header">
-      <img src={logo} alt="" className="logo" />
+      <div className="logo">
+        <img src={logo2} alt="" />
+      </div>
       <h1>Investment Calculator</h1>
     </div>
   );
